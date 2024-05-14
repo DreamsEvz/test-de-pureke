@@ -7,17 +7,16 @@ export default function Home() {
 
   const [score, setScore] = useState(0);
 
-  const questions: string[] = [
-    "As tu déjà conduit sous gougoutte",
-    "As tu déjà fait des strats de fou pour vesqui les decks ?",
-    "As tu déjà pris plus de 5 drogues différente en une tawa ?",
-    "T'es tu déjà fait niquer ton permis en sortant de tawa ?",
+  const questions: [string, number][] = [
+    ["As tu déjà conduit sous gougoutte", 20],
+    ["As tu déjà fait des strats de fou pour vesqui les decks ?", 10],
+    ["As tu déjà pris plus de 5 drogues différente en une tawa ?", 30],
+    ["T'es tu déjà fait niquer ton permis en sortant de tawa ?", 20],
   ];
 
   const nextQuestion = (anwser : string) => {
-
     if (anwser === "yes") {
-      setScore(prevScore => prevScore + 10);
+      setScore(prevScore => prevScore + questions[currentQuestion][1]);
     }
 
     if (currentQuestion === questions.length - 1) {
@@ -33,7 +32,7 @@ export default function Home() {
 
       <div className="h-28 w-1/2 md:mt-24 mt-24">
         <div className="h-1/2 w-full text-center">
-          {currentQuestion !== -1 ? questions[currentQuestion] : "Tu as fini, voici tes résultats !"}
+          {currentQuestion !== -1 ? questions[currentQuestion][0] : "Tu as fini, voici tes résultats !"}
         </div>
         <div className="h-1/2 w-full flex justify-center items-center gap-20 mt-8 md:mt-0">
           {currentQuestion !== -1 ? (
