@@ -31,3 +31,23 @@ body {
     text-wrap: balance;
   }
 }
+
+.slice {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  clip-path: circle(50% at 50% 50%);
+  background-color: black;
+}
+
+.perspective-3d {
+  border-radius: 100%;
+  transform: rotateX(51deg) rotateZ(43deg);
+  transform-style: preserve-3d;
+  border-radius: 100%;
+  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+  border: 5px solid #f9f9fb;
+}
