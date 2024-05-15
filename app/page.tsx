@@ -24,7 +24,7 @@ export default function Home() {
           Commencer
         </button>
       )}
-      {start && <Questions />}
+      {start && <Questions setStart={setStart} />}
     </main>
   );
 }

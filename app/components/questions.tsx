@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const Questions = () => {
+const Questions = ({ setStart }: { setStart: Function }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [drugScore, setDrugScore] = useState(0);
   const [policeScore, setPoliceScore] = useState(0);
@@ -109,28 +109,39 @@ const Questions = () => {
             </button>
           </>
         ) : (
-          <div className="flex flex-col mt-48">
+          <div className="flex flex-col mt-[300px]">
             <div
-              className="rounded-full h-40 w-40 relative perspective-3d"
+              className="rounded-full h-40 w-40 relative perspective-3d mx-auto"
               style={{
                 background: getPieChartBackground(),
               }}
             ></div>
-            <div className="flex flex-col justify-between mt-4">
+            <div className="flex flex-col justify-between mt-4 gap-4">
               <p>
                 {" "}
                 <span className="text-[#DFFF00]">Drogue</span>:{" "}
-                {percentage.drug.toFixed(2)}%
+                {percentage.drug.toFixed(2)}% soit <b>{drugScore}</b> points
               </p>
               <p>
                 {" "}
                 <span className="text-[#FFBF00]">Police</span>:{" "}
-                {percentage.police.toFixed(2)}%
+                {percentage.police.toFixed(2)}% soit <b>{policeScore}</b> points
               </p>
               <p>
                 <span className="text-[#FF7F50]">Hygiène</span>:{" "}
-                {percentage.hygiene.toFixed(2)}%
+                {percentage.hygiene.toFixed(2)}% soit <b>{hygieneScore}</b>{" "}
+                points
               </p>
+              <p>
+                Enfin ton score total est de <b>{score}</b>
+              </p>
+
+              <button
+                onClick={() => setStart(false)}
+                className="bg-green-500 p-4 rounded-sm"
+              >
+                Refaire le test
+              </button>
             </div>
           </div>
         )}
