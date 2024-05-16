@@ -9,7 +9,10 @@ export default function Home() {
         teufeur afin de t&apos;attribuer une note de teuf !{" "}
       </p>
 
-      <Link href="/questions" className="bg-green-500 p-4 rounded-sm mt-8">
+      <Link
+        href="/questions"
+        className="bg-green-500 p-4 rounded-sm mt-8 hover:bg-green-600"
+      >
         Commencer
       </Link>
     </main>

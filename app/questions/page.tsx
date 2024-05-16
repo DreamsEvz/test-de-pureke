@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const Questions = ({ setStart }: { setStart: Function }) => {
+const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [drugScore, setDrugScore] = useState(0);
   const [policeScore, setPoliceScore] = useState(0);
@@ -15,16 +15,38 @@ const Questions = ({ setStart }: { setStart: Function }) => {
     hygiene: 0,
   });
 
-  const questions = [
-    ["As tu déjà pris 4 drogues ou plus en une seule teuf ?", 30, "Drogue"],
-    ["As tu déjà conduit sous LSD", 20, "Drogue"],
-    ["As tu déjà fait des strats de fou pour vesqui les decks ?", 10, "Police"],
-    ["T'es tu déjà fait niquer ton permis en sortant de teuf ?", 20, "Police"],
-    ["As tu déjà mangé un truc vraiment suspect en teuf ?", 10, "Hygiene"],
-  ];
+  const questionsJson = {
+    questions: [
+      {
+        question: "As tu déjà pris 4 drogues ou plus en une seule teuf ?",
+        points: 30,
+        category: "Drogue",
+      },
+      {
+        question: "As tu déjà conduit sous LSD",
+        points: 20,
+        category: "Drogue",
+      },
+      {
+        question: "As tu déjà fait des strats de fou pour vesqui les decks ?",
+        points: 10,
+        category: "Police",
+      },
+      {
+        question: "T'es tu déjà fait niquer ton permis en sortant de teuf ?",
+        points: 20,
+        category: "Police",
+      },
+      {
+        question: "As tu déjà mangé un truc vraiment suspect en teuf ?",
+        points: 10,
+        category: "Hygiene",
+      },
+    ],
+  };
 
-  const maxScore = questions.reduce(
-    (acc, question) => acc + Number(question[1]),
+  const maxScore = questionsJson.questions.reduce(
+    (acc, question) => acc + Number(question.points),
     0
   );
 
@@ -45,11 +67,12 @@ const Questions = ({ setStart }: { setStart: Function }) => {
   const nextQuestion = (answer: string, category: string) => {
     if (answer === "yes") {
       setScore(
-        (prevScore) => prevScore + Number(questions[currentQuestion][1])
+        (prevScore) =>
+          prevScore + Number(questionsJson.questions[currentQuestion].points)
       );
     }
 
-    if (currentQuestion === questions.length - 1) {
+    if (currentQuestion === questionsJson.questions.length - 1) {
       setCurrentQuestion(-1);
     } else {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
@@ -58,17 +81,20 @@ const Questions = ({ setStart }: { setStart: Function }) => {
     switch (category) {
       case "Drogue":
         setDrugScore(
-          (prevScore) => prevScore + Number(questions[currentQuestion][1])
+          (prevScore) =>
+            prevScore + Number(questionsJson.questions[currentQuestion].points)
         );
         break;
       case "Police":
         setPoliceScore(
-          (prevScore) => prevScore + Number(questions[currentQuestion][1])
+          (prevScore) =>
+            prevScore + Number(questionsJson.questions[currentQuestion].points)
         );
         break;
       case "Hygiene":
         setHygieneScore(
-          (prevScore) => prevScore + Number(questions[currentQuestion][1])
+          (prevScore) =>
+            prevScore + Number(questionsJson.questions[currentQuestion].points)
         );
         break;
     }
@@ -89,11 +115,12 @@ const Questions = ({ setStart }: { setStart: Function }) => {
   return (
     <div className="h-full w-full md:mt-12 p-12">
       <h2 className="mb-4 text-xl text-center">
-        {currentQuestion !== -1 && questions[currentQuestion][2]}
+        {currentQuestion !== -1 &&
+          questionsJson.questions[currentQuestion].category}
       </h2>
       <div className="h-1/2 w-full text-center">
         {currentQuestion !== -1
-          ? questions[currentQuestion][0]
+          ? questionsJson.questions[currentQuestion].question
           : "Tu as fini, voici tes résultats !"}
       </div>
       <div className="h-1/2 w-full flex justify-center items-center gap-20 mt-8">
@@ -101,15 +128,18 @@ const Questions = ({ setStart }: { setStart: Function }) => {
           <>
             <button
               onClick={() =>
-                nextQuestion("yes", String(questions[currentQuestion][2]))
+                nextQuestion(
+                  "yes",
+                  String(questionsJson.questions[currentQuestion].category)
+                )
               }
-              className="bg-green-600 p-4 rounded-sm"
+              className="bg-green-500 p-4 rounded-sm hover:bg-green-600"
             >
               Oui
             </button>
             <button
               onClick={() => nextQuestion("no", "")}
-              className="bg-red-500 p-4 rounded-sm"
+              className="bg-red-500 p-4 rounded-sm hover:bg-red-600"
             >
               Non
             </button>
