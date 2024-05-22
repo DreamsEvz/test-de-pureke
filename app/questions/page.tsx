@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Results from "../components/Results";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -39,6 +39,16 @@ const Questions = () => {
       },
       {
         question: "As tu déjà mangé un truc vraiment suspect en teuf ?",
+        points: 10,
+        category: "Hygiene",
+      },
+      {
+        question: "As tu déjà fait caca en teuf ?",
+        points: 20,
+        category: "Hygiene",
+      },
+      {
+        question: "Danse tu pied nu en teuf ?",
         points: 10,
         category: "Hygiene",
       },
@@ -100,89 +110,46 @@ const Questions = () => {
     }
   };
 
-  const getPieChartBackground = () => {
-    const drugEnd = percentage.drug;
-    const policeEnd = drugEnd + percentage.police;
-    const hygieneEnd = policeEnd + percentage.hygiene;
-    return `conic-gradient(
-      #DFFF00 0% ${drugEnd}%,
-      #FFBF00 ${drugEnd}% ${policeEnd}%,
-      #FF7F50 ${policeEnd}% ${hygieneEnd}%,
-      #fff ${hygieneEnd}% 100%
-    )`;
-  };
-
   return (
-    <div className="h-full w-full md:mt-12 p-12">
-      <h2 className="mb-4 text-xl text-center">
-        {currentQuestion !== -1 &&
-          questionsJson.questions[currentQuestion].category}
-      </h2>
-      <div className="h-1/2 w-full text-center">
-        {currentQuestion !== -1
-          ? questionsJson.questions[currentQuestion].question
-          : "Tu as fini, voici tes résultats !"}
-      </div>
-      <div className="h-1/2 w-full flex justify-center items-center gap-20 mt-8">
+    <div className="h-screen w-screen md:mt-12 p-12 flex items-center flex-col">
+      <div className="h-1/2 w-full flex flex-col justify-center items-center gap-12">
         {currentQuestion !== -1 ? (
           <>
-            <button
-              onClick={() =>
-                nextQuestion(
-                  "yes",
-                  String(questionsJson.questions[currentQuestion].category)
-                )
-              }
-              className="bg-green-500 p-4 rounded-sm hover:bg-green-600"
-            >
-              Oui
-            </button>
-            <button
-              onClick={() => nextQuestion("no", "")}
-              className="bg-red-500 p-4 rounded-sm hover:bg-red-600"
-            >
-              Non
-            </button>
+            <h2 className="text-xl text-center">
+              {currentQuestion !== -1 &&
+                questionsJson.questions[currentQuestion].category}
+            </h2>
+            <p className="text-center">
+              {questionsJson.questions[currentQuestion].question}
+            </p>
+            <div className="flex gap-20">
+              <button
+                onClick={() =>
+                  nextQuestion(
+                    "yes",
+                    String(questionsJson.questions[currentQuestion].category)
+                  )
+                }
+                className="bg-green-500 p-4 rounded-sm hover:bg-green-600 min-w-16"
+              >
+                Oui
+              </button>
+              <button
+                onClick={() => nextQuestion("no", "")}
+                className="bg-red-500 p-4 rounded-sm hover:bg-red-600 min-w-16"
+              >
+                Non
+              </button>
+            </div>
           </>
         ) : (
-          <div className="flex flex-col">
-            <div
-              className="rounded-full h-40 w-40 relative perspective-3d mx-auto"
-              style={{
-                background: getPieChartBackground(),
-              }}
-            ></div>
-            <div className="flex flex-col justify-between mt-4 gap-4 text-center">
-              <p>
-                {" "}
-                <span className="text-[#DFFF00]">Drogue</span>:{" "}
-                {percentage.drug.toFixed(2)}% soit <b>{drugScore}</b> points
-              </p>
-              <p>
-                {" "}
-                <span className="text-[#FFBF00]">Police</span>:{" "}
-                {percentage.police.toFixed(2)}% soit <b>{policeScore}</b> points
-              </p>
-              <p>
-                <span className="text-[#FF7F50]">Hygiène</span>:{" "}
-                {percentage.hygiene.toFixed(2)}% soit <b>{hygieneScore}</b>{" "}
-                points
-              </p>
-              <p>
-                Enfin ton score total est de{" "}
-                <b>
-                  {score}/{maxScore}
-                </b>
-              </p>
-
-              <Link
-                href={"/"}
-                className="bg-green-500 p-4 rounded-sm text-center mt-8"
-              >
-                Refaire le test
-              </Link>
-            </div>
-          </div>
+          <Results
+            drugScore={drugScore}
+            policeScore={policeScore}
+            hygieneScore={hygieneScore}
+            totalScore={score}
+            maxScore={maxScore}
+          ></Results>
         )}
       </div>
     </div>
