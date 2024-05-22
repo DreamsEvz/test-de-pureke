@@ -1,17 +1,27 @@
 {
   "questions": [
     {
-      "question": "As tu déjà pris 4 drogues ou plus en une seule teuf ?",
+      "question": "As-tu déjà pris 4 drogues ou plus en une seule teuf ?",
       "points": 30,
       "category": "Drogue"
     },
     {
-      "question": "As tu déjà conduit sous LSD",
+      "question": "As-tu déjà conduit sous LSD",
       "points": 20,
       "category": "Drogue"
     },
     {
-      "question": "As tu déjà fait des strats de fou pour vesqui les decks ?",
+      "question": "As-tu déjà vomi à cause de prod ou d'alcool en teuf ?",
+      "points": 20,
+      "category": "Drogue"
+    },
+    {
+      "question": "As-tu déjà perdu ton pochon en teuf ?",
+      "points": 10,
+      "category": "Drogue"
+    },
+    {
+      "question": "As-tu déjà fait des strats de fou pour vesqui les decks ?",
       "points": 10,
       "category": "Police"
     },
@@ -21,12 +31,17 @@
       "category": "Police"
     },
     {
-      "question": "As tu déjà mangé un truc vraiment suspect en teuf ?",
+      "question": "As-tu déjà pris une amende en teuf ?",
       "points": 10,
+      "category": "Police"
+    },
+    {
+      "question": "As-tu déjà mangé un truc vraiment suspect en teuf ?",
+      "points": 20,
       "category": "Hygiene"
     },
     {
-      "question": "As tu déjà fait caca en teuf ?",
+      "question": "As-tu déjà fait caca en teuf ?",
       "points": 20,
       "category": "Hygiene"
     },
@@ -36,8 +51,43 @@
       "category": "Hygiene"
     },
     {
-      "question": "As tu déjà fait un tekos",
+      "question": "As-tu déjà passé 48h sans te changer en teuf ?",
       "points": 20,
+      "category": "Hygiene"
+    },
+    {
+      "question": "As-tu déjà aidé à nettoyer le site après une teuf ?",
+      "points": -20,
+      "category": "Hygiene"
+    },
+    {
+      "question": "As-tu déjà fait un tekos",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "Es-tu resté plus de 3 jours en teuf ?",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "Es-tu déjà resté plus de 2h d'affilé devant les caissons ?",
+      "points": 10,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà perdu tes amis en teuf et passé la soirée à les chercher ?",
+      "points": 10,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà eu une panne de voiture en allant à une teuf ?",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà trouvé quelque chose de valeur que quelqu'un avait perdu en teuf ?",
+      "points": 10,
       "category": "Autre"
     }
   ]
