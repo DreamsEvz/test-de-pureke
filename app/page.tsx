@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center md:p-24 p-12 text-center gap-6">
+    <main className="flex h-full flex-col items-center md:p-24 p-12 text-center gap-6">
       <p>
         <span className="text-2xl text-semibold">
           Bienvenue dans ce test de pureté !
