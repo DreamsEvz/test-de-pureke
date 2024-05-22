@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "As tu déjà pris 4 drogues ou plus en une seule teuf ?",
+      "points": 30,
+      "category": "Drogue"
+    },
+    {
+      "question": "As tu déjà conduit sous LSD",
+      "points": 20,
+      "category": "Drogue"
+    },
+    {
+      "question": "As tu déjà fait des strats de fou pour vesqui les decks ?",
+      "points": 10,
+      "category": "Police"
+    },
+    {
+      "question": "T'es tu déjà fait niquer ton permis en sortant de teuf ?",
+      "points": 20,
+      "category": "Police"
+    },
+    {
+      "question": "As tu déjà mangé un truc vraiment suspect en teuf ?",
+      "points": 10,
+      "category": "Hygiene"
+    },
+    {
+      "question": "As tu déjà fait caca en teuf ?",
+      "points": 20,
+      "category": "Hygiene"
+    },
+    {
+      "question": "Danse tu pied nu en teuf ?",
+      "points": 10,
+      "category": "Hygiene"
+    },
+    {
+      "question": "As tu déjà fait un tekos",
+      "points": 20,
+      "category": "Autre"
+    }
+  ]
+}
