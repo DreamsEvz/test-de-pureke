@@ -21,6 +21,11 @@
       "category": "Drogue"
     },
     {
+      "question": "Es-tu déjà allé en teuf sans sam ?",
+      "points": 20,
+      "category": "Drogue"
+    },
+    {
       "question": "As-tu déjà fait des strats de fou pour vesqui les decks ?",
       "points": 10,
       "category": "Police"
@@ -61,6 +66,11 @@
       "category": "Hygiene"
     },
     {
+      "question": "Es-tu déjà rentré sans tes déchets ?",
+      "points": 20,
+      "category": "Hygiene"
+    },
+    {
       "question": "As-tu déjà fait un tekos",
       "points": 20,
       "category": "Autre"
@@ -88,6 +98,21 @@
     {
       "question": "As-tu déjà trouvé quelque chose de valeur que quelqu'un avait perdu en teuf ?",
       "points": 10,
+      "category": "Autre"
+    },
+    {
+      "question": "T'es tu déjà endormi dans le son",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà perdu ta voiture dans la teuf ?",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà perdu tes clés en teuf ?",
+      "points": 20,
       "category": "Autre"
     }
   ]
