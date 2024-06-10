@@ -1,39 +1,12 @@
-"use client";
 import Link from "next/link";
-import { useState } from "react";
 
 const Results = ({
-  drugScore,
-  policeScore,
-  hygieneScore,
-  autreScore,
   totalScore,
   maxScore,
 }: {
-  drugScore: number;
-  policeScore: number;
-  hygieneScore: number;
-  autreScore: number;
   totalScore: number;
   maxScore: number;
 }) => {
-  const [percentage, setPercentage] = useState({
-    drug: 0,
-    police: 0,
-    hygiene: 0,
-    autre: 0,
-  });
-
-  const calculatePercentages = () => {
-    if (totalScore === 0) return { drug: 0, police: 0, hygiene: 0, autre: 0 };
-    return {
-      drug: (drugScore / totalScore) * 100,
-      police: (policeScore / totalScore) * 100,
-      hygiene: (hygieneScore / totalScore) * 100,
-      autre: (autreScore / totalScore) * 100,
-    };
-  };
-
   const sayScore = (score: number, maxScore: number) => {
     const percentage = (score / maxScore) * 100;
 

@@ -129,14 +129,7 @@ const Questions = () => {
             </div>
           </>
         ) : (
-          <Results
-            drugScore={drugScore}
-            policeScore={policeScore}
-            hygieneScore={hygieneScore}
-            autreScore={autreScore}
-            totalScore={score}
-            maxScore={maxScore}
-          />
+          <Results totalScore={score} maxScore={maxScore} />
         )}
       </div>
     </div>
