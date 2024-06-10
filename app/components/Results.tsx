@@ -46,20 +46,20 @@ const Results = ({
     }
     if (percentage < 50) {
       return (
-        <span className="text-orange-400">
+        <span className="text-orange-400 text-center font-bold">
           Tu es un teufeur moyen, tu es sur la bonne voie !
         </span>
       );
     }
     if (percentage < 75) {
       return (
-        <span className="text-red-500">
+        <span className="text-orange-600 text-center font-bold">
           Tu es un teufeur confirmé bien joué !
         </span>
       );
     }
     return (
-      <span className="text-red-700">
+      <span className="text-red-500 text-center font-bold">
         Tu es un teufeur expert, elle est où la kééééé ?!
       </span>
     );
