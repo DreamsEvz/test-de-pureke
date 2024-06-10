@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Results = ({
   drugScore,
@@ -34,68 +34,55 @@ const Results = ({
     };
   };
 
-  const getPieChartBackground = () => {
-    const drugEnd = percentage.drug;
-    const policeEnd = drugEnd + percentage.police;
-    const hygieneEnd = policeEnd + percentage.hygiene;
-    const autreEnd = hygieneEnd + percentage.autre;
-    return `conic-gradient(
-      #DFFF00 0% ${drugEnd}%,
-      #FFBF00 ${drugEnd}% ${policeEnd}%,
-      #FF7F50 ${policeEnd}% ${hygieneEnd}%,
-      #6AE64E ${hygieneEnd}% ${autreEnd}%,
-      #fff ${autreEnd}% 100%
-    )`;
-  };
+  const sayScore = (score: number, maxScore: number) => {
+    const percentage = (score / maxScore) * 100;
 
-  useEffect(() => {
-    setPercentage(calculatePercentages());
-  }, [totalScore, drugScore, policeScore, hygieneScore]);
+    if (percentage < 25) {
+      return (
+        <span className="text-green-500">
+          Tu es un petit teufeur persévère !
+        </span>
+      );
+    }
+    if (percentage < 50) {
+      return (
+        <span className="text-orange-400">
+          Tu es un teufeur moyen, tu es sur la bonne voie !
+        </span>
+      );
+    }
+    if (percentage < 75) {
+      return (
+        <span className="text-red-500">
+          Tu es un teufeur confirmé bien joué !
+        </span>
+      );
+    }
+    return (
+      <span className="text-red-700">
+        Tu es un teufeur expert, elle est où la kééééé ?!
+      </span>
+    );
+  };
 
   return (
     <div className="flex flex-col">
       <h1 className="text-4xl text-center font-semibold">
         Voici tes résultats
       </h1>
-      <div
-        className="rounded-full h-40 w-40 relative perspective-3d mx-auto"
-        style={{
-          background: getPieChartBackground(),
-        }}
-      ></div>
-      <div className="flex flex-col justify-between mt-4 gap-4 items-center">
-        <p>
-          {" "}
-          <span className="text-[#DFFF00]">Drogue</span>:{" "}
-          {percentage.drug.toFixed(2)}% soit <b>{drugScore}</b> points
-        </p>
-        <p>
-          {" "}
-          <span className="text-[#FFBF00]">Police</span>:{" "}
-          {percentage.police.toFixed(2)}% soit <b>{policeScore}</b> points
-        </p>
-        <p>
-          <span className="text-[#FF7F50]">Hygiène</span>:{" "}
-          {percentage.hygiene.toFixed(2)}% soit <b>{hygieneScore}</b> points
-        </p>
-        <p>
-          <span className="text-[#6AE64E]">Autre</span>:{" "}
-          {percentage.autre.toFixed(2)}% soit <b>{autreScore}</b> points
-        </p>
-        <p>
-          Enfin ton score total est de{" "}
-          <b>
-            {totalScore} / {maxScore}
-          </b>
-        </p>
 
-        <Link
-          href={"/"}
-          className="bg-green-500 p-4 rounded-sm text-center mt-8"
-        >
-          Refaire le test
-        </Link>
-      </div>
+      <p>
+        Tu as obtenu un score de{" "}
+        <b>
+          {totalScore} / {maxScore}
+        </b>
+        <br />
+        {sayScore(totalScore, maxScore)}
+      </p>
+
+      <Link href={"/"} className="bg-green-500 p-4 rounded-sm text-center mt-8">
+        Refaire le test
+      </Link>
     </div>
   );
 };
