@@ -100,7 +100,7 @@ const Questions = () => {
   }
 
   return (
-    <div className="h-dvh w-screen md:mt-12 p-12 flex items-center flex-col md:h-full">
+    <div className="h-full w-screen md:mt-12 p-12 flex items-center flex-col">
       <div className="h-1/2 w-full flex flex-col justify-center items-center gap-12">
         {currentQuestion !== -1 && questions.length > 0 ? (
           <>
