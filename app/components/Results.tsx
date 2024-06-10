@@ -39,29 +39,35 @@ const Results = ({
 
     if (percentage < 25) {
       return (
-        <span className="text-green-500">
-          Tu es un petit teufeur persévère !
-        </span>
+        <p className="text-center font-bold mt-8">
+          Tu es un <span className="text-green-500">jeune teufeur</span>,
+          persévère !
+        </p>
       );
     }
     if (percentage < 50) {
       return (
-        <span className="text-orange-400 text-center font-bold mt-8">
-          Tu es un teufeur moyen, tu es sur la bonne voie !
-        </span>
+        <p className="text-center font-bold mt-8">
+          Tu es un{" "}
+          <span className="text-orange-400">teufeur en apprentisage</span>, tu
+          es sur la bonne voie !
+        </p>
       );
     }
     if (percentage < 75) {
       return (
-        <span className="text-orange-600 text-center font-bold mt-8">
-          Tu es un teufeur confirmé bien joué !
-        </span>
+        <p className="text-center font-bold mt-8">
+          Tu es un{" "}
+          <span className="text-orange-600">teufeur confirm&eacute;</span>, les
+          caissons n&apos;ont plus de secret pour toi !
+        </p>
       );
     }
     return (
-      <span className="text-red-500 text-center font-bold mt-8">
-        Tu es un teufeur expert, elle est où la kééééé ?!
-      </span>
+      <p className="text-center font-bold mt-8">
+        Tu es un <span className="text-red-500">teufeur expert</span>, elle est
+        où la kééééé ?!
+      </p>
     );
   };
 
