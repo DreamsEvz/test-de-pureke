@@ -13,9 +13,9 @@ export default function Home() {
           t&apos;attribuer une note de teuf !*
         </span>
         <br />
-        <span className="text-xs mt-4 block">
-          *Ce test est purement à but de divertissement, il n&apos;y a pas de
-          bon ou de mauvais teufeur.
+        <span className="text-xs block">
+          *Ce test à uniquement été conçu pour le divertissement, il n&apos;y a
+          pas de bon ou de mauvais teufeur.
         </span>
       </p>
 
