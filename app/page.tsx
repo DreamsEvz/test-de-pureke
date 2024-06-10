@@ -14,7 +14,7 @@ export default function Home() {
         </span>
         <br />
         <span className="text-xs block">
-          *Ce test à uniquement été conçu pour le divertissement, il n&apos;y a
+          *Ce test a uniquement été conçu pour le divertissement, il n&apos;y a
           pas de bon ou de mauvais teufeur.
         </span>
       </p>
