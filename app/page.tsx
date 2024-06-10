@@ -10,9 +10,13 @@ export default function Home() {
         <br />
         <span className="text-lg mt-4 block">
           Nous allons évaluer tes expériences en tant que teufeur afin de
-          t&apos;attribuer une note de teuf !
+          t&apos;attribuer une note de teuf !*
         </span>
         <br />
+        <span className="text-xs mt-4 block">
+          *Ce test est purement à but de divertissement, il n&apos;y a pas de
+          bon ou de mauvais teufeur.
+        </span>
       </p>
 
       <Link
