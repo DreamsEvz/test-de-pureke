@@ -76,11 +76,6 @@
       "category": "Hygiene"
     },
     {
-      "question": "As-tu déjà aidé à nettoyer le site après une teuf ?",
-      "points": -20,
-      "category": "Hygiene"
-    },
-    {
       "question": "Es-tu déjà rentré sans tes déchets ?",
       "points": 20,
       "category": "Hygiene"
