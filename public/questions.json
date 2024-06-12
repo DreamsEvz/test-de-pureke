@@ -26,6 +26,16 @@
       "category": "Drogue"
     },
     {
+      "question": "As-tu déjà pris une drogue que tu ne connaissais pas en teuf ?",
+      "points": 20,
+      "category": "Drogue"
+    },
+    {
+      "question": "As-tu déjà fait un gros badtrip ou un k-hole en teuf ?",
+      "points": 30,
+      "category": "Drogue"
+    },
+    {
       "question": "As-tu déjà fait des strats de fou pour vesqui les decks ?",
       "points": 10,
       "category": "Police"
