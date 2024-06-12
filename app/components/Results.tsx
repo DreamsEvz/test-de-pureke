@@ -41,12 +41,24 @@ const Results = ({
         </p>
       );
     }
-    return (
-      <p className="text-center font-medium mt-8">
-        Tu es un <span className="font-bold text-red-500">teufeur expert</span>,
-        elle est où la kééééé ?!
-      </p>
-    );
+    if (percentage < 100) {
+      return (
+        <p className="text-center font-medium mt-8">
+          Tu es un{" "}
+          <span className="font-bold text-red-500">teufeur expert</span>, elle
+          est où la kééééé ?!
+        </p>
+      );
+    }
+    if (percentage === 100) {
+      return (
+        <p className="text-center font-medium mt-8">
+          Tu es un{" "}
+          <span className="font-bold text-red-600">teufeur ultime</span>, Jimmy
+          n&apos;a qu&apos;à bien se tenir !
+        </p>
+      );
+    }
   };
 
   return (
