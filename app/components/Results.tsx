@@ -55,7 +55,7 @@ const Results = ({
         Voici tes résultats
       </h1>
 
-      <p>
+      <p className="text-center mx-auto">
         Tu as obtenu un score de{" "}
         <b>
           {totalScore} / {maxScore}
