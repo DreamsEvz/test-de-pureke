@@ -15,7 +15,7 @@ export default function Home() {
         <br />
         <span className="text-xs block">
           *Ce test a uniquement été conçu pour le divertissement, il n&apos;y a
-          pas de bon ou de mauvais teufeur.
+          pas de bon ou de mauvais teufeur !
         </span>
       </p>
 
