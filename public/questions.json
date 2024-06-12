@@ -41,6 +41,11 @@
       "category": "Police"
     },
     {
+      "question": "T'es tu déjà fait prendre ta cons par les flics en sortie de teuf ?",
+      "points": 20,
+      "category": "Police"
+    },
+    {
       "question": "As-tu déjà mangé un truc vraiment suspect en teuf ?",
       "points": 20,
       "category": "Hygiene"
@@ -112,6 +117,11 @@
     },
     {
       "question": "As-tu déjà perdu tes clés en teuf ?",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà fini en PLS dans ta voiture, au RDR ou chez les secours ?",
       "points": 20,
       "category": "Autre"
     }
