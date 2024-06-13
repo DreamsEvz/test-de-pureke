@@ -54,8 +54,8 @@ const Results = ({
       return (
         <p className="text-center font-medium mt-8">
           Tu es un{" "}
-          <span className="font-bold text-red-600">teufeur ultime</span>, Jimmy
-          n&apos;a qu&apos;à bien se tenir !
+          <span className="font-bold text-red-600">teufeur ultime</span>, les
+          caissons n&apos;ont qu&apos;à bien se tenir !
         </p>
       );
     }
