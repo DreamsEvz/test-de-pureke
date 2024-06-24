@@ -91,7 +91,7 @@
       "category": "Autre"
     },
     {
-      "question": "Es-tu déjà resté plus de 2h d'affilé devant les caissons ?",
+      "question": "Es-tu déjà resté plus de 3h d'affilé devant les caissons ?",
       "points": 10,
       "category": "Autre"
     },
@@ -101,8 +101,23 @@
       "category": "Autre"
     },
     {
-      "question": "As-tu déjà eu une panne de voiture en allant à une teuf ?",
+      "question": "As-tu déjà oublié la donna ?",
+      "points": 10,
+      "category": "Autre"
+    },
+    {
+      "question": "T'es tu déjà endormi dans un endroit improbable en teuf ?",
       "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "As-tu déjà eu une panne de voiture avant, pendant ou en sortant de teuf ?",
+      "points": 20,
+      "category": "Autre"
+    },
+    {
+      "question": "Es-tu déjà allé ou parti de teuf en stop ?",
+      "points": 10,
       "category": "Autre"
     },
     {
